@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user');
+const User = require('../models/user.js');
 const Post = require('../models/post.js');
-const verifyToken = require('../middleware/verify-token');
+const verifyToken = require('../middleware/verify-token.js');
 
 // return the user object if authorized else throw an error
 router.get('/:userId', verifyToken, async (req, res) => {

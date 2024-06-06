@@ -1,4 +1,4 @@
-const BACKEND_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/profiles`;
+const BACKEND_URL = `/api/profiles`;
 
 // index to show the users profile page
 const show = async (userId) => {
