@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
+import 'dotenv/config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,10 +16,6 @@ export default defineConfig({
             secure: false,
             ws: true,
         }
-    },
-    // the following is used only if Vite is not live refreshing your browser
-    watch: {
-        usePolling: true
     }
   }
 })
