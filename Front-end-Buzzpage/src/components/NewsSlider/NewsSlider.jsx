@@ -3,9 +3,12 @@ import styles from './NewsSlider.module.css'
 const NewsSlider = () => {
     const [articles, setArticles] = useState([])
     useEffect(() => {
+        console.log(import.meta.env.VITE_API_KEY);
         let url = `https://newsapi.org/v2/top-headlines?country=us&pageSize=5&apiKey=${import.meta.env.VITE_API_KEY}`
-        console.log(import.meta.env.VITE_API_KEY)
-        fetch(url).then(response => response.json()).then(data => setArticles(data.articles));
+        fetch(url).then(response => response.json()).then(data => {
+            console.log(data);
+            setArticles(data.articles)
+        });
     }, [])
 
 
@@ -19,7 +22,7 @@ const NewsSlider = () => {
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
             </div>
             <div className="carousel-inner">
-                {articles.map((news, index) => {
+                {articles.length > 0 && articles.map((news, index) => {
                     return (
                         <div className={index === 1 ? "carousel-item active" : "carousel-item"} key={index}>
                             <img src={news.urlToImage ? news.urlToImage : "https://media.istockphoto.com/id/1300930548/video/breaking-news-template-for-tv-broadcast-news-show-program-with-3d-breaking-news-text-and.jpg?s=640x640&k=20&c=V9q9-UaoDqmhg7mKbOL4QMGAjWKJy0DBf1Mp61i7JkQ="} className="d-block w-100" style={{ height: '400px' }} alt="..." />

@@ -7,6 +7,7 @@ const show = async (userId) => {
         const res = await fetch(`${BACKEND_URL}/${userId}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}`}
         })
+      console.log(res);
       return res.json()
     } catch (error) {
       throw error
