@@ -32,6 +32,6 @@ app.get('*', (req, res) => {
 
 // Routes go here
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log('The express app is ready!');
 });
