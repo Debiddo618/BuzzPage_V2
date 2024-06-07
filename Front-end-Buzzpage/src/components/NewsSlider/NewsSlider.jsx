@@ -4,6 +4,7 @@ const NewsSlider = () => {
     const [articles, setArticles] = useState([])
     useEffect(() => {
         let url = `https://newsapi.org/v2/top-headlines?country=us&pageSize=5&apiKey=${import.meta.env.VITE_API_KEY}`
+        console.log(import.meta.env.VITE_API_KEY)
         fetch(url).then(response => response.json()).then(data => setArticles(data.articles));
     }, [])
 
