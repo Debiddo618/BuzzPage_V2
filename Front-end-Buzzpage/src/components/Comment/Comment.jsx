@@ -18,19 +18,16 @@ const Comment = (props) => {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="text"></label>
-
-                <div className="input-group">
-                    <span className="input-group-text">
-                        <button style={{ backgroundColor: "#F4BE1E", border: "none" }} className="btn btn-secondary" type="submit">Add Comment</button>
-                    </span>
-                    <input className="form-control" aria-label="With textarea"
+                <div class="input-group mb-3">
+                    <input
+                        className="form-control"
                         type="text"
                         name="text"
                         id="text"
                         value={formData.text}
                         onChange={handleChange}>
                     </input>
+                    <button style={{ backgroundColor: "#F4BE1E", border: "none" }} class="btn btn-outline-secondary text-light" type="submit" id="button-addon2">Button</button>
                 </div>
 
             </form>

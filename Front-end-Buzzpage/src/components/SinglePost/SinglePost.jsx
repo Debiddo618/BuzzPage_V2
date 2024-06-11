@@ -6,7 +6,7 @@ import { AuthedUserContext } from '../../App';
 import Comment from '../Comment/Comment';
 import styles from './SinglePost.module.css'
 
-const SinglePost = () => {
+const SinglePost = (props) => {
     const { postId } = useParams();
     const navigate = useNavigate();
     const currentUser = useContext(AuthedUserContext);
@@ -76,9 +76,10 @@ const SinglePost = () => {
             {post &&
                 <div className="card" style={{ width: "30rem" }}>
                     <img src={post.photo} className="card-img-top" alt="..." />
-                    <div className="card-body">
+                    <div className="card-body bg-dark">
                         <div className="d-flex gap-1 mb-2">
-                            <div className='like-buttons'>
+                            <div className='like-buttons' style={{ color: "#F4BE1E" }}
+                            >
                                 {post.like} Likes
                                 <button className="btn btn-primary mx-1" onClick={() => handleLikeClick("like")}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-suit-heart-fill" viewBox="0 0 16 16">
@@ -108,8 +109,12 @@ const SinglePost = () => {
                                 </>
                             )}
                         </div>
-                        <h5 className="card-title">{post.title} by {post.author.username}</h5>
-                        <p className="card-text">{post.text}</p>
+                        <h5 className="card-title" style={{ color: "#F4BE1E" }}
+                        >
+                            {post.title} by {post.author.username}
+                        </h5>
+                        <p className="card-text" style={{ color: "#F4BE1E" }}
+                        >{post.text}</p>
 
                         {/* Collapse button and back to hive */}
                         <div className="d-inline-flex gap-1">
@@ -120,6 +125,7 @@ const SinglePost = () => {
                                 data-bs-target="#collapseExample"
                                 aria-expanded="false"
                                 aria-controls="collapseExample"
+                                style={{ color: "#F4BE1E" }}
                             >
                                 {post.comments.length ? <h6> View all {post.comments.length} comments</h6> : <h6>No Comments</h6>}
 
