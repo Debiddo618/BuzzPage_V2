@@ -7,6 +7,7 @@ import Comment from '../Comment/Comment';
 import styles from "./PostDetails.module.css"
 
 const PostDetails = (props) => {
+
     const { postId } = useParams();
     const navigate = useNavigate();
     const currentUser = useContext(AuthedUserContext);
@@ -55,10 +56,12 @@ const PostDetails = (props) => {
         setEditCommentId(null);
     }
 
+    // going back to the home page
     const handleClick = () => {
         navigate(`/`);
     }
 
+    // handle liking a post
     const handleLikeClick = async (arg) => {
         let likes;
         if (arg === "like") {
