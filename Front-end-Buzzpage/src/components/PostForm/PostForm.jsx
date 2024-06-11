@@ -68,10 +68,10 @@ const postForm = (props) => {
     };
 
     return (
-        <>
+        <div className={styles.container}>
             <PageTransition />
 
-            <form className={`border container-m p-5 h-75 w-50 mx-auto mt-5 bg-dark text-light ${styles.form}`} onSubmit={handleSubmit}>
+            <form className={`border container-m p-5 h-75 w-50 mx-auto bg-dark text-light ${styles.form}`} onSubmit={handleSubmit}>
                 {postId ? <div className="display-3 text-center">Edit Post</div> : <div className="display-3 text-center">Create Post</div>
                 }
 
@@ -153,7 +153,7 @@ const postForm = (props) => {
 
 
 
-        </>
+        </div>
     );
 }
 

@@ -76,8 +76,9 @@ const SinglePost = (props) => {
         const updatedPost = await postService.update(post._id, { like: likes });
         setPost(updatedPost);
     };
+
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={{ minHeight: postId ? "100vh" : "" }}>
             {post &&
                 <div className="card" style={{ width: "30rem" }}>
                     <img src={post.photo} className="card-img-top" style={{ height: "300px", objectFit: "cover" }} />

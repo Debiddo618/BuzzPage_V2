@@ -10,3 +10,9 @@
 .button:hover {
     background-color: #F4BE1E;
 }
+
+.container {
+    background-color: #F4BE1E;
+    min-height: 100vh;
+    padding: 30px;
+}
