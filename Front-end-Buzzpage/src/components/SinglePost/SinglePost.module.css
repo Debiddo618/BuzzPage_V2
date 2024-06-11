@@ -4,7 +4,6 @@
     align-items: center;
     padding: 20px;
     background-color: #F4BE1E;
-    min-height: 100vh;
 }
 
 .edit {
@@ -22,4 +21,11 @@
     border: none;
     background-color: transparent;
     font-size: 12px;
+}
+
+.like{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }

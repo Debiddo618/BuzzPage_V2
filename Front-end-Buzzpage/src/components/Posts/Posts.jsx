@@ -5,7 +5,7 @@ const Posts = (props) => {
         <div className="row">
             {props.AllPosts.map((post, index) => {
                 return (
-                    <div className="col-md-3" key={index}>
+                    <div className="col-sm-3" key={index}>
                         <SinglePost postData={post} handleDeletePost={props.handleDeletePost} />
                     </div>
                 )

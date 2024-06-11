@@ -5,11 +5,3 @@
     width: 100%;
     min-height: 100vh;
 }
-
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background-color: whitesmoke;
-    min-height: 100vh;
-}

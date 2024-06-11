@@ -74,96 +74,94 @@ const AllPosts = (props) => {
     };
 
     return (
-        <main className="mx-2">
-            <div className="row">
-                {props.AllPosts.map((post, index) => (
-                    <div className="col-md-3 mb-4" key={index}>
-                        <div className="card h-100">
-                            <img src={post.photo} className="card-img-top h-50" alt="..." />
-                            <div className="card-body bg-dark">
-                                <h5 className="card-title">
-                                    <Link
-                                        className={`${styles.link}`}
-                                        to={`/posts/${post._id}`}
-                                    >
-                                        <p style={{ color: "#F4BE1E" }}>
-                                            {post.title} by {post.author.username}
-                                        </p>
-                                    </Link>
-                                </h5>
-                                <p className={`card-text ${styles.text}`}>{post.text}</p>
-                                <button
-                                    style={{ color: "#F4BE1E" }}
-                                    className={`btn btn-link ${styles.btn}`}
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapseExample"
-                                    aria-expanded="false"
-                                    aria-controls="collapseExample"
+        <main className="mx-2 d-flex justify-content-center">
+            {props.AllPosts.map((post, index) => (
+                <div className="col-md-3" key={index}>
+                    <div className="card">
+                        <img src={post.photo} className="card-img-top" alt="..." />
+                        <div className="card-body bg-dark">
+                            <h5 className="card-title">
+                                <Link
+                                    className={`${styles.link}`}
+                                    to={`/posts/${post._id}`}
                                 >
-                                    {post.comments.length ? <h6>{post.comments.length} comments</h6> : <h6>No Comments</h6>}
-                                </button>
+                                    <p style={{ color: "#F4BE1E" }}>
+                                        {post.title} by {post.author.username}
+                                    </p>
+                                </Link>
+                            </h5>
+                            <p className={`card-text ${styles.text}`}>{post.text}</p>
+                            <button
+                                style={{ color: "#F4BE1E" }}
+                                className={`btn btn-link ${styles.btn}`}
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample"
+                                aria-expanded="false"
+                                aria-controls="collapseExample"
+                            >
+                                {post.comments.length ? <h6>{post.comments.length} comments</h6> : <h6>No Comments</h6>}
+                            </button>
 
-                                <div className="collapse h-50" id="collapseExample">
-                                    <div className="card card-body">
-                                        <div className="comment-section">
-                                            <h1>Comments</h1>
-                                            <div className="comments">
-                                                <div>
-                                                    {post.comments &&
-                                                        post.comments.map((comment, index) => (
-                                                            <div key={index}>
-                                                                {editCommentId === comment._id ? (
-                                                                    <>
-                                                                        <input
-                                                                            type="text"
-                                                                            value={editedCommentText.text}
-                                                                            onChange={(e) =>
-                                                                                setEditedCommentText({ text: e.target.value })
-                                                                            }
-                                                                        />
-                                                                        <button onClick={() => handleSaveEdit(comment._id, post._id)}>
-                                                                            Save
-                                                                        </button>
-                                                                    </>
-                                                                ) : (
-                                                                    <>
-                                                                        {comment.authorName}: {comment.text}
-                                                                        {currentUser && currentUser._id === post.author._id && (
-                                                                            <>
-                                                                                <button
-                                                                                    onClick={() =>
-                                                                                        handleToggleEdit(comment._id, comment.text)
-                                                                                    }
-                                                                                >
-                                                                                    Edit
-                                                                                </button>
-                                                                                <button
-                                                                                    onClick={() =>
-                                                                                        handleDeleteComment(post._id, comment._id)
-                                                                                    }
-                                                                                >
-                                                                                    Delete
-                                                                                </button>
-                                                                            </>
-                                                                        )}
-                                                                    </>
-                                                                )
-                                                                }
-                                                            </div>
-                                                        ))}
-                                                </div>
+                            <div className="collapse h-50" id="collapseExample">
+                                <div className="card card-body">
+                                    <div className="comment-section">
+                                        <h1>Comments</h1>
+                                        <div className="comments">
+                                            <div>
+                                                {post.comments &&
+                                                    post.comments.map((comment, index) => (
+                                                        <div key={index}>
+                                                            {editCommentId === comment._id ? (
+                                                                <>
+                                                                    <input
+                                                                        type="text"
+                                                                        value={editedCommentText.text}
+                                                                        onChange={(e) =>
+                                                                            setEditedCommentText({ text: e.target.value })
+                                                                        }
+                                                                    />
+                                                                    <button onClick={() => handleSaveEdit(comment._id, post._id)}>
+                                                                        Save
+                                                                    </button>
+                                                                </>
+                                                            ) : (
+                                                                <>
+                                                                    {comment.authorName}: {comment.text}
+                                                                    {currentUser && currentUser._id === post.author._id && (
+                                                                        <>
+                                                                            <button
+                                                                                onClick={() =>
+                                                                                    handleToggleEdit(comment._id, comment.text)
+                                                                                }
+                                                                            >
+                                                                                Edit
+                                                                            </button>
+                                                                            <button
+                                                                                onClick={() =>
+                                                                                    handleDeleteComment(post._id, comment._id)
+                                                                                }
+                                                                            >
+                                                                                Delete
+                                                                            </button>
+                                                                        </>
+                                                                    )}
+                                                                </>
+                                                            )
+                                                            }
+                                                        </div>
+                                                    ))}
                                             </div>
-                                            <Comment handleAddComment={handleAddComment} postId={post._id} />
                                         </div>
-
+                                        <Comment handleAddComment={handleAddComment} postId={post._id} />
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                ))}
-            </div>
+                </div>
+            ))}
         </main>
     );
 };

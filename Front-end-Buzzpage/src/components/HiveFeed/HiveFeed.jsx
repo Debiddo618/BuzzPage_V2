@@ -15,7 +15,7 @@ const HiveFeed = (props) => {
         <div className={styles.container}>
             <PageTransition />
             <main>
-                <h1 className='text-center text-light'>Welcome to the HIVE! Here's the latest BUZZ:</h1>
+                <h1 className='text-center text-light mt-2'>Welcome to the HIVE! Here's the latest BUZZ:</h1>
                 {/* {props.AllPosts.length > 0 ? <AllPosts AllPosts={props.AllPosts} /> : <h1 className='text-center'>No Post Yet!</h1>} */}
                 {props.AllPosts.length > 0 ? <Posts AllPosts={props.AllPosts} handleDeletePost={props.handleDeletePost} /> : <h1 className='text-center'>No Post Yet!</h1>}
             </main>
