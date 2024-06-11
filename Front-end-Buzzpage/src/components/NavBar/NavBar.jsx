@@ -39,7 +39,7 @@ const NavBar = (props) => {
             setImage(userData.user.image);
         }
         fetchUser();
-    }, []);
+    }, [user]);
 
 
     return (

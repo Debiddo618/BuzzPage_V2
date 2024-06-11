@@ -26,6 +26,7 @@ const UserForm = (props) => {
         }
         fetchUser();
     }, []);
+    console.log({ formData })
 
     //handles any change to the form data
     const handleChange = (evt) => {
@@ -53,9 +54,10 @@ const UserForm = (props) => {
                         <div className={`mt-3 mb-4  ${styles.pictureFrame}`}>
                             <label htmlFor="picture"></label>
                             <select className={styles.picture} name="image" id="picture" value={formData.image} style={{ backgroundiImage: `url("${formData.image}")` }} onChange={handleChange}>
-                                <option className={styles.d1} value={default1}>yellow</option>
-                                <option className={styles.d2} value={default2}>red</option>
-                                <option className={styles.d3} value={default3}>black</option>
+                                <option className={styles.grey} value={"https://i.imgur.com/XeEfWCU.png"}>Grey</option>
+                                <option className={styles.red} value={"https://i.imgur.com/2nCztPl.png"}>Red</option>
+                                <option className={styles.yellow} value={"https://i.imgur.com/49qkZEK.png"}>Yellow</option>
+                                <option className={styles.blue} value={"https://i.imgur.com/rijvXoW.png"}>Blue</option>
                             </select>
                         </div>
                         <div className="row">
