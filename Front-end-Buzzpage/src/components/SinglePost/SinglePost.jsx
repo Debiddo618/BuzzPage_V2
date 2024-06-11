@@ -80,7 +80,7 @@ const SinglePost = (props) => {
         <div className={styles.container}>
             {post &&
                 <div className="card" style={{ width: "30rem" }}>
-                    <img src={post.photo} className="card-img-top h-50" alt="..." />
+                    <img src={post.photo} className="card-img-top" style={{ height: "300px", objectFit: "cover" }} />
                     <div className="card-body bg-dark">
                         <div className="d-flex gap-1 mb-2">
                             <div className='like-buttons' style={{ color: "#F4BE1E" }}
