@@ -133,7 +133,7 @@ const SinglePost = (props) => {
                                 className={`btn btn-link mb-2 ${styles.link}`}
                                 type="button"
                                 data-bs-toggle="collapse"
-                                data-bs-target="#collapseExample"
+                                data-bs-target={`#${post._id}`}
                                 aria-expanded="false"
                                 aria-controls="collapseExample"
                                 style={{ color: "#F4BE1E" }}
@@ -144,7 +144,7 @@ const SinglePost = (props) => {
 
                         </div>
 
-                        <div className="collapse" id="collapseExample">
+                        <div className="collapse" id={`${post._id}`}>
                             <div className="card card-body">
                                 <div className="comment-section">
                                     <h3 className='text-center'>Comments</h3>
