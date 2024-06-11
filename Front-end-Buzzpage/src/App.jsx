@@ -25,6 +25,7 @@ import * as profileService from './services/profileService'
 
 import NewsSlider from './components/NewsSlider/NewsSlider';
 import LandingPage from './components/LandingPage/LandingPage';
+import SinglePost from './components/SinglePost/SinglePost';
 
 export const AuthedUserContext = createContext(null);
 
@@ -107,7 +108,8 @@ const App = () => {
 
         <Route path="/users/:userId/posts/:postId/edit" element={<PostForm handleUpdatePost={handleUpdatePost} posts={posts} userPost={userPost} />} />
 
-        <Route path="/posts/:postId" element={<PostDetails handleUpdatePost={handleUpdatePost} handleDeletePost={handleDeletePost} posts={posts} userPost={userPost} />} />
+        {/* <Route path="/posts/:postId" element={<PostDetails handleUpdatePost={handleUpdatePost} handleDeletePost={handleDeletePost} posts={posts} userPost={userPost} />} /> */}
+        <Route path="/posts/:postId" element={<SinglePost handleUpdatePost={handleUpdatePost} handleDeletePost={handleDeletePost} posts={posts} userPost={userPost} />} />
 
         <Route path="/users/profile/:userId/edit" element={<UserForm handleUpdateUser={handleUpdateUser} user={user} />} />
       </Routes>
