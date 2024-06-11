@@ -1,23 +1,22 @@
-
-.container{
+.container {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    background-image: url('/src/assets/images/largeblackhoneycomb.png'); 
+    background-color: #F4BE1E;
 }
 
-.form{ 
+.form {
     display: flex;
     align-items: center;
 }
 
 /* div that contains the select box */
-.pictureFrame{
+.pictureFrame {
     display: flex;
 }
 
 /* the select box */
-.picture{
+.picture {
     background-size: cover;
     width: 30%;
     aspect-ratio: 1/1;
@@ -26,17 +25,17 @@
 }
 
 /* set backgroud as you select image */
-.picture:has(.d1:checked){
+.picture:has(.d1:checked) {
     background-image: url('/src/assets/images/default%20icon%201.png');
     content-visibility: hidden;
 }
 
-.picture:has(.d2:checked){
+.picture:has(.d2:checked) {
     background-image: url('/src/assets/images/default%20icon%202.png');
     content-visibility: hidden;
 }
 
-.picture:has(.d3:checked){
+.picture:has(.d3:checked) {
     background-image: url('/src/assets/images/default%20icon%203.png');
     content-visibility: hidden;
 }

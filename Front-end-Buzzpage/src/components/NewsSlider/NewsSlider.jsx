@@ -3,11 +3,9 @@ import styles from './NewsSlider.module.css'
 const NewsSlider = () => {
     const [articles, setArticles] = useState([])
     useEffect(() => {
-        // let url = `https://newsapi.org/v2/top-headlines?country=us&pageSize=5&apiKey=${import.meta.env.VITE_API_KEY}`
         let url = `https://newsdata.io/api/1/latest?apikey=${import.meta.env.VITE_API_KEY_1}&q=example&language=en`
         fetch(url).then(response => response.json()).then(data => setArticles(data.results));
     }, [])
-    console.log(articles);
 
     return (
         <div id="carouselExampleCaptions" className={` mx-auto my-3 carousel slide ${styles.container}`}>

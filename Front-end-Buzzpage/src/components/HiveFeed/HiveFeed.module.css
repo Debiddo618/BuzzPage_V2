@@ -1,5 +1,5 @@
 .container {
-    background-image: url(../../assets/images/beehive1.png);
+    background-color: #F4BE1E;
     display: flex;
     flex-direction: column;
     width: 100%;

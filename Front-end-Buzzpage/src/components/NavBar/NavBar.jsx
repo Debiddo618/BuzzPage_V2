@@ -87,7 +87,7 @@ const NavBar = (props) => {
                 <div className="offcanvas-body">
                     <p className='text-center h3 mb-3'>Daily News</p>
 
-                    <NewsSlider />
+                    {/* <NewsSlider /> */}
                     <button data-bs-dismiss="offcanvas" className={`btn mb-3 ${styles.createPostBtn}`} onClick={handleClick}>
                         Create New Post
                     </button>
