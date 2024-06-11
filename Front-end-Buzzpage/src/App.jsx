@@ -94,7 +94,7 @@ const App = () => {
     <AuthedUserContext.Provider value={user}>
       <NavBar user={user} handleSignout={handleSignout} posts={posts} />
       <Routes>
-        <Route path="/" element={user ? <HiveFeed AllPosts={posts} /> : <LandingPage />} />
+        <Route path="/" element={user ? <HiveFeed AllPosts={posts} handleDeletePost={handleDeletePost} /> : <LandingPage />} />
 
         <Route path="/comment" element={<Comment />} />
 
@@ -109,7 +109,7 @@ const App = () => {
         <Route path="/users/:userId/posts/:postId/edit" element={<PostForm handleUpdatePost={handleUpdatePost} posts={posts} userPost={userPost} />} />
 
         {/* <Route path="/posts/:postId" element={<PostDetails handleUpdatePost={handleUpdatePost} handleDeletePost={handleDeletePost} posts={posts} userPost={userPost} />} /> */}
-        <Route path="/posts/:postId" element={<SinglePost handleUpdatePost={handleUpdatePost} handleDeletePost={handleDeletePost} posts={posts} userPost={userPost} />} />
+        <Route path="/posts/:postId" element={<SinglePost handleDeletePost={handleDeletePost} />} />
 
         <Route path="/users/profile/:userId/edit" element={<UserForm handleUpdateUser={handleUpdateUser} user={user} />} />
       </Routes>

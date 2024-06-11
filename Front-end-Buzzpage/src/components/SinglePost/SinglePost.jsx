@@ -19,7 +19,12 @@ const SinglePost = (props) => {
 
     useEffect(() => {
         const fetchPostComment = async () => {
-            const postData = await postService.show(postId);
+            let postData;
+            if (postId) {
+                postData = await postService.show(postId);
+            } else {
+                postData = props.postData;
+            }
             setPost(postData);
         };
         fetchPostComment();
@@ -75,7 +80,7 @@ const SinglePost = (props) => {
         <div className={styles.container}>
             {post &&
                 <div className="card" style={{ width: "30rem" }}>
-                    <img src={post.photo} className="card-img-top" alt="..." />
+                    <img src={post.photo} className="card-img-top h-50" alt="..." />
                     <div className="card-body bg-dark">
                         <div className="d-flex gap-1 mb-2">
                             <div className='like-buttons' style={{ color: "#F4BE1E" }}
@@ -92,7 +97,7 @@ const SinglePost = (props) => {
                                     </svg>
                                 </button>
                             </div>
-                            {currentUser && currentUser._id === post.author._id && (
+                            {postId && currentUser && currentUser._id === post.author._id && (
                                 <>
                                     <button className="btn btn-success">
                                         <Link
@@ -111,8 +116,14 @@ const SinglePost = (props) => {
                         </div>
                         <h5 className="card-title" style={{ color: "#F4BE1E" }}
                         >
-                            {post.title} by {post.author.username}
-                        </h5>
+                            <Link
+                                className={`${styles.link}`}
+                                to={`/posts/${post._id}`}
+                            >
+                                <p style={{ color: "#F4BE1E" }}>
+                                    {post.title} by {post.author.username}
+                                </p>
+                            </Link>                        </h5>
                         <p className="card-text" style={{ color: "#F4BE1E" }}
                         >{post.text}</p>
 

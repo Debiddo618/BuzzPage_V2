@@ -18,7 +18,7 @@ const Comment = (props) => {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <div class="input-group mb-3">
+                <div className="input-group mb-3">
                     <input
                         className="form-control"
                         type="text"
@@ -27,7 +27,7 @@ const Comment = (props) => {
                         value={formData.text}
                         onChange={handleChange}>
                     </input>
-                    <button style={{ backgroundColor: "#F4BE1E", border: "none" }} class="btn btn-outline-secondary text-light" type="submit" id="button-addon2">Button</button>
+                    <button style={{ backgroundColor: "#F4BE1E", border: "none" }} className="btn btn-outline-secondary text-light" type="submit" id="button-addon2">Button</button>
                 </div>
 
             </form>
