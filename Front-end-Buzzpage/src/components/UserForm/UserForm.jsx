@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { show, update } from '../../services/profileService';
+import { useNavigate } from 'react-router-dom';
+import { show } from '../../services/profileService';
 import styles from './UserForm.module.css'
 /*-----------------import default img----------------- */
-import default1 from '../../assets/images/default icon 1.png'
-import default2 from '../../assets/images/default icon 2.png'
-import default3 from '../../assets/images/default icon 3.png'
 import PageTransition from '../PageTransition/PageTransition';
 
 const UserForm = (props) => {
@@ -50,6 +47,7 @@ const UserForm = (props) => {
             <main className={styles.container} >
                 <div className={styles.form}>
                     <form onSubmit={handleSubmit} className="card bg-dark p-5 border-warning">
+                        <div className={`display-3 text-center underline text-light ${styles.editTitle}`}>Edit Profile</div>
                         <div className="form-text text-warning text-center fs-1">Your page is buzzing for a change</div>
                         <div className={`mt-3 mb-4  ${styles.pictureFrame}`}>
                             <label htmlFor="picture"></label>
@@ -62,6 +60,12 @@ const UserForm = (props) => {
                         </div>
                         <div className="row">
                             <div className="col">
+                                <label
+                                    htmlFor="firstName"
+                                    className="form-label text-light"
+                                >
+                                    First Name
+                                </label>
                                 <input
                                     type="text"
                                     className="form-control me-2 border-warning"
@@ -72,6 +76,12 @@ const UserForm = (props) => {
                                 />
                             </div>
                             <div className="col" >
+                                <label
+                                    htmlFor="lastName"
+                                    className="form-label text-light"
+                                >
+                                    Last Name
+                                </label>
                                 <input
                                     type="text"
                                     className="form-control me-2 border-warning"
@@ -82,8 +92,8 @@ const UserForm = (props) => {
                                 />
                             </div>
                         </div>
-                        <div className="mb-3">
-                            <label htmlFor="bio" className="form-label">Bio:</label>
+                        <div className="mb-3 mt-1">
+                            <label htmlFor="bio" className="form-label text-light">Bio:</label>
                             <textarea
                                 type="text"
                                 className="form-control border-warning"
@@ -94,9 +104,9 @@ const UserForm = (props) => {
                                 onChange={handleChange}
                             />
                         </div>
-                        <button type='submit' className="btn btn-warning border-dark">Edit info</button>
-                        <div className='d-flex align-self-center mt-3'>
-                            <button onClick={handleBack} className="btn-close bg-warning " />
+                        <div className=" d-flex mx-auto gap-1">
+                            <button type='submit' className="btn btn-warning border-dark text-light">Update User</button>
+                            <button onClick={handleBack} className="btn bg-warning text-light">Cancel</button>
                         </div>
                     </form>
                 </div>

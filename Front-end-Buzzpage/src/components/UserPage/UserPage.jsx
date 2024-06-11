@@ -45,17 +45,12 @@ const UserPage = (props) => {
         <main className={styles.container}>
             <PageTransition />
             <div className={styles.sidebar}>
-                <SideBar posts={user.posts} user={user} />
+                <SideBar posts={user.posts} user={user} deleteMenu={deleteMenu} />
             </div>
             <div className={styles.allPost}>
                 <h1 className={"text fs-1 m-auto mt-2 "}>All Posts</h1>
             </div>
             <div className={`card bg-dark m-auto mt-2 border-warning ${styles.userInfo}`}>
-                {!isOpen && (
-                    <div className={`d-flex justify-content-center ${styles.delete}`}>
-                        <button className={`btn btn-warning `} onClick={deleteMenu}>Delete account</button>
-                    </div>
-                )}
                 <img src={user.image} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h1 className="card-text fw-bold fst-italic text-warning">{user.username}</h1>
@@ -71,7 +66,6 @@ const UserPage = (props) => {
                             <p className="card-body text-center fs-2 ">No honey in this nest</p>
                             <div className="d-flex justify-content-center">
                                 <div className="spinner-grow text-warning " style={{ width: '5rem', height: '5rem' }}>
-                                    <span className="visually-hidden">no huny</span>
                                 </div>
                             </div>
                         </div>
