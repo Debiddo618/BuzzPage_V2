@@ -100,7 +100,7 @@ const UserPage = (props) => {
                     </>
                 )}
             </div>
-            {/* <div className={`d-flex flex-wrap ${styles.userPost}`}>
+            <div className={`d-flex flex-wrap ${styles.userPost}`}>
                 {user.posts.length === 0 ? (
                     <div className="card h-100 w-100 bg-dark mt-3" >
                         <div className="card-body justify-content-center d-flex flex-column">
@@ -122,7 +122,7 @@ const UserPage = (props) => {
                             </div>
                         </div></Link>
                     )))}
-            </div> */}
+            </div>
         </main>
     );
 

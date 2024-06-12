@@ -28,7 +28,7 @@ const SideBar = (props) => {
     return (
             <div className="container bg-dark w-100 h-100">
                 <div className={'card bg-dark border-dark d-flex justify-content-center'}>
-                    <img src={props.user.image} className="card-img-top" alt="..." />
+                    <img src={props.user.image} className="card-img-top w-50 mx-auto" alt="..." />
                     <h1 className="card-title fw-bold fst-italic text-center" style={{ color: "#F4BE1E" }}>{props.user.username}</h1>
                     <div className="border-bottom pb-2 d-flex justify-content-center gap-2">
                         <button className="btn text-light" style={{ backgroundColor: "#F4BE1E" }} onClick={handleEdit}>Edit Bio</button>
