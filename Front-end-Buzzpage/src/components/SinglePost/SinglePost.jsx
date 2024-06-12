@@ -81,7 +81,7 @@ const SinglePost = (props) => {
         <div className={styles.container} style={{ minHeight: postId ? "100vh" : "" }}>
             {post &&
                 <div className="card" style={{ width: "30rem" }}>
-                    <img src={post.photo} className="card-img-top" style={{ height: "300px", objectFit: "cover" }} />
+                    <img src={post.photo ? post.photo : "https://i.imgur.com/pbEktOB.png"} className="card-img-top" style={{ height: "300px", objectFit: "cover" }} />
                     <div className="card-body bg-dark">
                         <div className="d-flex gap-1 mb-2">
                             <div className={styles.like} style={{ color: "#F4BE1E" }}>
