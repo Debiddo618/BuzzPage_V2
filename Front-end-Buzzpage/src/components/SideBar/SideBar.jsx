@@ -30,9 +30,9 @@ const SideBar = (props) => {
             <div className="container bg-dark" style={{ minHeight: '100vh' }}>
                 <div className={'card bg-dark border-dark'}>
                     <img src={props.user.image} className="card-img-top" style={{ width: "60%", height: "10%" }} alt="..." />
-                    <h1 className="card-title fw-bold fst-italic text-warning text-center">{props.user.username}</h1>
+                    <h1 className="card-title fw-bold fst-italic text-center" style={{ color: "#F4BE1E" }}>{props.user.username}</h1>
                     <div className="border-bottom pb-2 d-flex justify-content-center gap-2">
-                        <button className="btn btn-warning text-light" onClick={handleEdit}>Edit User</button>
+                        <button className="btn text-light" style={{ backgroundColor: "#F4BE1E" }} onClick={handleEdit}>Edit Bio</button>
                         <button className="btn text-light" style={{ backgroundColor: "#F16943" }} onClick={props.deleteMenu}>Delete Account</button>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ const SideBar = (props) => {
                         </div>
                     )
                 }
-                ) : <p className="text-warning">No Matching Posts</p>}
+                ) : <p style={{ color: "#F4BE1E" }}>No Matching Posts</p>}
             </div>
         </>
     );

@@ -48,29 +48,39 @@ const UserPage = (props) => {
                 <SideBar posts={user.posts} user={user} deleteMenu={deleteMenu} />
             </div>
             <div className={styles.allPost}>
-                <h1 className={"text fs-1 m-auto mt-2 "}>All Posts</h1>
+                <h1 className={"text fs-1 m-auto mt-2 text-light"}>All Posts</h1>
             </div>
             <div className={`card bg-dark m-auto mt-2 border-warning ${styles.userInfo}`}>
                 <img src={user.image} className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h1 className="card-text fw-bold fst-italic text-warning">{user.username}</h1>
+                    <h1 className="card-text fw-bold fst-italic" style={{ color: "#F4BE1E" }}>{user.username}</h1>
                 </div>
             </div>
-            <div className={`card d-flex  bg-dark m-auto text-warning mt-2 me-5 d-flex border-warning ${styles.userBio}`}>
-                <h5 className="card-text fs-2 p-2">Beekeeper: {user.firstName} {user.lastName}</h5>
-                {user.bio ?
-                    <p className="card-body text-center fs-4">{user.bio}</p>
-                    :
-                    <>
-                        <div className="d-flex justify-content-center flex-column">
-                            <p className="card-body text-center fs-2 ">No honey in this nest</p>
-                            <div className="d-flex justify-content-center">
-                                <div className="spinner-grow text-warning " style={{ width: '5rem', height: '5rem' }}>
+            <div className={`card d-flex bg-dark m-auto mt-2 me-5 d-flex border-warning  ${styles.userBio}`} style={{ color: "#F4BE1E" }}>
+                <h2 className="card-text text-center mt-1">Beekeeper Bio:</h2>
+                <div className="bio p-3">
+                    <h3>UserId: {user._id}</h3>
+                    <h3>First Name: {user.firstName}</h3>
+                    <h3>Last Name: {user.lastName}</h3>
+                    {user.bio ?
+                        <>
+                            <h3>Bio: {user.bio}</h3>
+                            <button className="btn text-light mx-auto" style={{ backgroundColor: "#F4BE1E" }} onClick={handleEdit}>Edit Bio</button>
+                        </>
+
+                        :
+                        <>
+                            <div className="d-flex justify-content-center flex-column">
+                                <p className="card-body text-center fs-2 ">No honey in this nest</p>
+                                <div className="d-flex justify-content-center">
+                                    <div className="spinner-grow text-warning " style={{ width: '5rem', height: '5rem' }}>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </>
-                }
+                        </>
+                    }
+                </div>
+
                 {/* for later development/ only allow user to edit or delete their own page */}
                 {props.user._id !== userId ? (''
                 ) : (

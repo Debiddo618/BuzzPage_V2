@@ -53,7 +53,7 @@ const NavBar = (props) => {
                             </svg>
                         </button>
                         <img src={Logo} width={75} alt="" />
-                        <div className="display-4">BuzzPage</div>
+                        <div className="display-4 text-light">BuzzPage</div>
                     </Link>
                     <div className={styles.links}>
                         <Link className='h2' to={`/users/profile/${props.user._id}`}><img src={image} alt="" className={`img-fluid ${styles.profile}`} />Hello {props.user.username}</Link>
