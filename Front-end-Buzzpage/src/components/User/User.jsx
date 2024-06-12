@@ -67,7 +67,7 @@ const User = (props) => {
                                     {user.bio ?
                                         <>
                                             <h3>Bio: {user.bio}</h3>
-                                            <button className="btn text-light mx-auto w-75 mt-5" style={{ backgroundColor: "#F4BE1E" }} onClick={handleEdit}>Edit Bio</button>
+                                            <button className="btn text-light mx-auto w-50 mt-5" style={{ backgroundColor: "#F16943" }} onClick={handleEdit}>Edit Bio</button>
                                         </>
 
                                         :
@@ -90,8 +90,8 @@ const User = (props) => {
                                         {isOpen && (
                                             <div className={`container-m h-100 text-center w-100 d-flex flex-column justify-content-center fs-1`} style={{ color: "#F4BE1E" }} >Are you sure you want to buzz away?
                                                 <div className='d-flex justify-content-center gap-3 mt-3'>
-                                                    <button className="btn text-light" style={{ backgroundColor: "#F4BE1E" }} onClick={() => props.handleDeleteUser(userId)}>Confirm</button>
-                                                    <button className={`btn text-light`} style={{ backgroundColor: "#F16943" }} onClick={deleteMenu}>Cancel</button>
+                                                    <button className="btn text-light w-50" style={{ backgroundColor: "#F4BE1E" }} onClick={() => props.handleDeleteUser(userId)}>Confirm</button>
+                                                    <button className={`btn text-light w-50`} style={{ backgroundColor: "#F16943" }} onClick={deleteMenu}>Cancel</button>
                                                 </div>
                                             </div>
                                         )}
