@@ -86,12 +86,8 @@ router.put('/:postId', async (req, res) => {
     try {
       // Find the post:
       const post = await Post.findById(req.params.postId);
-  
-      // Check permissions:
-      if (!post.author.equals(req.user._id)) {
-        return res.status(403).send("You're not allowed to do that!");
-      }
-  
+      const user = await User.findById(post.author);
+    
       // Update Post:
       const updatedPost = await Post.findByIdAndUpdate(
         req.params.postId,
@@ -100,7 +96,7 @@ router.put('/:postId', async (req, res) => {
       );
   
       // Append req.user to the author property:
-      updatedPost._doc.author = req.user;
+      updatedPost._doc.author = user;
   
       // Issue JSON response:
       res.status(200).json(updatedPost);

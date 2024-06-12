@@ -43,7 +43,7 @@ const User = (props) => {
 
     return (
         <>
-            {/* <PageTransition /> */}
+            <PageTransition />
             <div className={`${styles.container}`}>
                 <div className="row">
                     <div className="col-3" style={{ minHeight: "100vh" }}>
@@ -102,32 +102,35 @@ const User = (props) => {
                                     </>
                                 )}
                             </div>
-                            <h1 className={"m-3 text-light text-center"}>All Posts</h1>
+                            <h1 className={"m-3 text-light text-center"}>My Posts</h1>
 
-                            <div className="d-flex justify-content-center bg-danger">
-                                <div className={`d-flex flex-wrap justify-content-around`}>
-                                    {user.posts.length === 0 ? (
-                                        <div className="card h-100 bg-dark mt-3 w-75 mx-auto" >
-                                            <div className="card-body justify-content-center d-flex flex-column">
-                                                <h1 className="card-title justify-self-center text-center" style={{ color: "#F4BE1E" }}>NO POST</h1>
-                                                <p className="card-text text-center" style={{ color: "#F4BE1E" }}>You need to get buzzing to the hive little bee</p>
-                                                <button className="btn btn-lg text-light w-50 mx-auto" style={{ backgroundColor: "#F4BE1E" }} onClick={handleEdit}>New Post</button>
+                            <div className={`d-flex`}>
+                                {user.posts.length === 0 ? (
+                                    <div className="card h-100 bg-dark mt-3 w-75 mx-auto" >
+                                        <div className="card-body justify-content-center d-flex flex-column">
+                                            <h1 className="card-title justify-self-center text-center" style={{ color: "#F4BE1E" }}>NO POST</h1>
+                                            <p className="card-text text-center" style={{ color: "#F4BE1E" }}>You need to get buzzing to the hive little bee</p>
+                                            <button className="btn btn-lg text-light w-50 mx-auto" style={{ backgroundColor: "#F4BE1E" }} onClick={handleEdit}>New Post</button>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="mx-auto">
+                                        <div className='d-flex justify-content-center'>
+                                            <div className='d-flex flex-wrap justify-content-center'>
+                                                {user.posts.map((post) => (
+                                                    <div className="card m-2 w-25" key={post._id}>
+                                                        <img className="card-img-top" src={post.photo} alt="Card image cap" />
+                                                        <div className="card-body bg-dark">
+                                                            <h5 className="card-title" style={{ color: "#F4BE1E" }}>{post.title}</h5>
+                                                            <p className="card-text" style={{ color: "#F4BE1E" }}>{post.text}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
                                             </div>
                                         </div>
-                                    ) : (
-                                        <div className='d-flex flex-wrap'>
-                                            {user.posts.map((post) => (
-                                                <div className="card m-2" style={{ width: "18rem" }}>
-                                                    <img className="card-img-top" src={post.photo} alt="Card image cap" />
-                                                    <div className="card-body bg-dark">
-                                                        <h5 className="card-title" style={{ color: "#F4BE1E" }}>{post.title}</h5>
-                                                        <p className="card-text" style={{ color: "#F4BE1E" }}>{post.text}</p>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
+                                    </div>
+
+                                )}
                             </div>
                         </div>
                     </div>

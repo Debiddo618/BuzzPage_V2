@@ -68,92 +68,87 @@ const postForm = (props) => {
     };
 
     return (
-        <div className={styles.container}>
+        <>
             <PageTransition />
-
-            <form className={`border container-m p-5 h-75 w-50 mx-auto bg-dark text-light ${styles.form}`} onSubmit={handleSubmit}>
-                {postId ? <div className="display-3 text-center">Edit Post</div> : <div className="display-3 text-center">Create Post</div>
-                }
-
-                {formData.photo ? (
-                    <div className="text-center">
-                        <img className="img-fluid mb-3 w-25 mx-auto" src={formData.photo} alt="profilePic" />
+            <div className={styles.container}>
+                <form className={`border container-m p-5 h-75 w-50 mx-auto bg-dark text-light ${styles.form}`} onSubmit={handleSubmit}>
+                    {postId ? <div className="display-3 text-center">Edit Post</div> : <div className="display-3 text-center">Create Post</div>
+                    }
+                    {formData.photo ? (
+                        <div className="text-center">
+                            <img className="img-fluid mb-3 w-25 mx-auto" src={formData.photo} alt="profilePic" />
+                        </div>
+                    ) : ""}
+                    <div className="mb-2">
+                        <label
+                            htmlFor="title"
+                            className="form-label"
+                        >
+                            Title
+                        </label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="title"
+                            name="title"
+                            value={formData.title}
+                            onChange={handleChange}
+                            required
+                        />
                     </div>
-                ) : ""}
-
-                <div className="mb-2">
-                    <label
-                        htmlFor="title"
-                        className="form-label"
-                    >
-                        Title
-                    </label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="title"
-                        name="title"
-                        value={formData.title}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="mb-2">
-                    <label
-                        htmlFor="text"
-                        className="form-label"
-                    >
-                        Description
-                    </label>
-                    <textarea
-                        type="text"
-                        className="form-control mb-3"
-                        id="text"
-                        name="text"
-                        value={formData.text}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="input-group mb-3">
-                    <input
-                        onChange={handleChangeImage}
-                        type="file"
-                        className="form-control"
-                        name='photo'
-                        id="image"
-                        ref={fileInputRef}
-                    />
-                    <label className="input-group-text" hmtlfor="image">Upload Image</label>
-                </div>
-
-                <div className="form-group">
-                    <label className='form-label' hmtlfor="category">Category</label>
-                    <select
-                        className="form-control mb-3"
-                        required
-                        name="category"
-                        id="category"
-                        value={formData.category}
-                        onChange={handleChange}
-                    >
-                        <option value="Lifestyle">Lifestyle</option>
-                        <option value="News">News</option>
-                        <option value="Sports">Sports</option>
-                        <option value="Games">Games</option>
-                        <option value="Movies">Movies</option>
-                        <option value="Music">Music</option>
-                        <option value="Television">Television</option>
-                    </select>
-                </div>
-                {postId ? <button type="submit" disabled={""} className={`btn btn-primary w-100 ${styles.button}`}>Edit Post</button>
-                    : <button type="submit" disabled={""} className={`btn btn-primary w-100 ${styles.button}`}>Create Post</button>
-                }
-            </form>
-
-
-
-        </div>
+                    <div className="mb-2">
+                        <label
+                            htmlFor="text"
+                            className="form-label"
+                        >
+                            Description
+                        </label>
+                        <textarea
+                            type="text"
+                            className="form-control mb-3"
+                            id="text"
+                            name="text"
+                            value={formData.text}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="input-group mb-3">
+                        <input
+                            onChange={handleChangeImage}
+                            type="file"
+                            className="form-control"
+                            name='photo'
+                            id="image"
+                            ref={fileInputRef}
+                        />
+                        <label className="input-group-text" hmtlfor="image">Upload Image</label>
+                    </div>
+                    <div className="form-group">
+                        <label className='form-label' hmtlfor="category">Category</label>
+                        <select
+                            className="form-control mb-3"
+                            required
+                            name="category"
+                            id="category"
+                            value={formData.category}
+                            onChange={handleChange}
+                        >
+                            <option value="Lifestyle">Lifestyle</option>
+                            <option value="News">News</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Games">Games</option>
+                            <option value="Movies">Movies</option>
+                            <option value="Music">Music</option>
+                            <option value="Television">Television</option>
+                        </select>
+                    </div>
+                    {postId ? <button type="submit" disabled={""} className={`btn btn-primary w-100 ${styles.button}`}>Edit Post</button>
+                        : <button type="submit" disabled={""} className={`btn btn-primary w-100 ${styles.button}`}>Create Post</button>
+                    }
+                </form>
+            </div>
+        </>
     );
 }
 
