@@ -46,10 +46,10 @@ const User = (props) => {
             <PageTransition />
             <div className={`${styles.container}`}>
                 <div className="row">
-                    <div className="col-3" style={{ minHeight: "100vh" }}>
+                    <div className="col-2" style={{ minHeight: "100vh" }}>
                         <SideBar posts={user.posts} user={user} deleteMenu={deleteMenu} />
                     </div>
-                    <div className="col-9">
+                    <div className="col-10">
                         <div className="row w-100 mt-3 d-flex justify-content-between">
                             <div className={`card bg-dark d-flex justify-content-center align-items-center`} style={{ width: "55%" }}>
                                 <img src={user.image} className="card-img-top h-75 w-75" alt="..." />
@@ -88,14 +88,10 @@ const User = (props) => {
                                 ) : (
                                     <>
                                         {isOpen && (
-                                            <div className={`container-m h-100 w-100 text-dark d-flex flex-column justify-content-center fs-1 ${styles.popup}`} >Are you sure you want to buzz away
-                                                <div className='row '>
-                                                    <div className='col'>
-                                                        <button className="btn btn-warning" onClick={() => props.handleDeleteUser(userId)}>Confirm</button>
-                                                    </div>
-                                                    <div className='col'>
-                                                        <button className={`btn btn-warning ${styles.cancel}`} onClick={deleteMenu}>Deny</button>
-                                                    </div>
+                                            <div className={`container-m h-100 text-center w-100 d-flex flex-column justify-content-center fs-1`} style={{ color: "#F4BE1E" }} >Are you sure you want to buzz away?
+                                                <div className='d-flex justify-content-center gap-3 mt-3'>
+                                                    <button className="btn text-light" style={{ backgroundColor: "#F4BE1E" }} onClick={() => props.handleDeleteUser(userId)}>Confirm</button>
+                                                    <button className={`btn text-light`} style={{ backgroundColor: "#F16943" }} onClick={deleteMenu}>Cancel</button>
                                                 </div>
                                             </div>
                                         )}
@@ -119,7 +115,7 @@ const User = (props) => {
                                             <div className='d-flex flex-wrap justify-content-center'>
                                                 {user.posts.map((post) => (
                                                     <div className="card m-2 w-25" key={post._id}>
-                                                        <img className="card-img-top" src={post.photo} alt="Card image cap" />
+                                                        <img className="card-img-top" src={post.photo ? post.photo : "https://i.imgur.com/pbEktOB.png"} alt="Card image cap" />
                                                         <div className="card-body bg-dark">
                                                             <h5 className="card-title" style={{ color: "#F4BE1E" }}>{post.title}</h5>
                                                             <p className="card-text" style={{ color: "#F4BE1E" }}>{post.text}</p>
