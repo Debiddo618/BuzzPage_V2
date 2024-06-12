@@ -47,25 +47,25 @@ const UserPage = (props) => {
             <div className={styles.sidebar}>
                 <SideBar posts={user.posts} user={user} deleteMenu={deleteMenu} />
             </div>
-            <div className={styles.allPost}>
-                <h1 className={"text fs-1 m-auto mt-2 text-light"}>All Posts</h1>
+            <div className={` ${styles.allPost}`}>
+                <h1 className={"m-auto mt-5 text-light"}>All Posts</h1>
             </div>
-            <div className={`card bg-dark m-auto mt-2 border-warning ${styles.userInfo}`}>
-                <img src={user.image} className="card-img-top" alt="..." />
+            <div className={`card bg-dark m-5 p-5 ${styles.userInfo}`}>
+                <img src={user.image} className="card-img-top h-75 w-75" alt="..." />
                 <div className="card-body">
                     <h1 className="card-text fw-bold fst-italic" style={{ color: "#F4BE1E" }}>{user.username}</h1>
                 </div>
             </div>
-            <div className={`card d-flex bg-dark m-auto mt-2 me-5 d-flex border-warning  ${styles.userBio}`} style={{ color: "#F4BE1E" }}>
+            <div className={`card d-flex bg-dark d-flex m-5 p-5  ${styles.userBio}`} style={{ color: "#F4BE1E" }}>
                 <h2 className="card-text text-center mt-1">Beekeeper Bio:</h2>
-                <div className="bio p-3">
+                <div className="bio p-3 d-flex flex-column gap-3">
                     <h3>UserId: {user._id}</h3>
                     <h3>First Name: {user.firstName}</h3>
                     <h3>Last Name: {user.lastName}</h3>
                     {user.bio ?
                         <>
                             <h3>Bio: {user.bio}</h3>
-                            <button className="btn text-light mx-auto" style={{ backgroundColor: "#F4BE1E" }} onClick={handleEdit}>Edit Bio</button>
+                            <button className="btn text-light mx-auto w-75 mt-5" style={{ backgroundColor: "#F4BE1E" }} onClick={handleEdit}>Edit Bio</button>
                         </>
 
                         :
@@ -100,13 +100,13 @@ const UserPage = (props) => {
                     </>
                 )}
             </div>
-            <div className={`d-flex  flex-wrap ${styles.userPost}`}>
+            {/* <div className={`d-flex flex-wrap ${styles.userPost}`}>
                 {user.posts.length === 0 ? (
                     <div className="card h-100 w-100 bg-dark mt-3" >
                         <div className="card-body justify-content-center d-flex flex-column">
                             <h1 className="card-title text-warning justify-self-center">NO POST</h1>
                             <p className="card-text text-warning">You need to get buzzing to the hive little bee</p>
-                            <button className="btn btn-warning btn-lg" onClick={handleEdit}>New Post</button>
+                            <button className="btn btn-lg text-light" style={{ backgroundColor: "#F4BE1E" }} onClick={handleEdit}>New Post</button>
                         </div>
                     </div>
                 ) : (
@@ -122,7 +122,7 @@ const UserPage = (props) => {
                             </div>
                         </div></Link>
                     )))}
-            </div>
+            </div> */}
         </main>
     );
 

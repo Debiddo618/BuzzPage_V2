@@ -9,6 +9,7 @@ import PostForm from './components/PostForm/PostForm';
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import PageTransition from './components/PageTransition/PageTransition';
 import Comment from './components/Comment/Comment';
+import User from './components/User/User';
 
 
 /*----------------User components-------------------- */
@@ -102,7 +103,8 @@ const App = () => {
 
         <Route path="/users/signin" element={<SignInForm setUser={setUser} />} />
 
-        <Route path="/users/profile/:userId" element={<UserPage posts={posts} user={user} handleDeleteUser={handleDeleteUser} />} />
+        {/* <Route path="/users/profile/:userId" element={<UserPage posts={posts} user={user} handleDeleteUser={handleDeleteUser} />} /> */}
+        <Route path="/users/profile/:userId" element={<User posts={posts} user={user} handleDeleteUser={handleDeleteUser} />} />
 
         <Route path="/users/:userId/posts/new" element={<PostForm handleAddPost={handleAddPost} />} />
 

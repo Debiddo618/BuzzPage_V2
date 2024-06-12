@@ -26,10 +26,9 @@ const SideBar = (props) => {
         post.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
     return (
-        <>
-            <div className="container bg-dark" style={{ minHeight: '100vh' }}>
-                <div className={'card bg-dark border-dark'}>
-                    <img src={props.user.image} className="card-img-top" style={{ width: "60%", height: "10%" }} alt="..." />
+            <div className="container bg-dark w-100 h-100">
+                <div className={'card bg-dark border-dark d-flex justify-content-center'}>
+                    <img src={props.user.image} className="card-img-top" alt="..." />
                     <h1 className="card-title fw-bold fst-italic text-center" style={{ color: "#F4BE1E" }}>{props.user.username}</h1>
                     <div className="border-bottom pb-2 d-flex justify-content-center gap-2">
                         <button className="btn text-light" style={{ backgroundColor: "#F4BE1E" }} onClick={handleEdit}>Edit Bio</button>
@@ -58,7 +57,6 @@ const SideBar = (props) => {
                 }
                 ) : <p style={{ color: "#F4BE1E" }}>No Matching Posts</p>}
             </div>
-        </>
     );
 }
 
