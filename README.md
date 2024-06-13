@@ -4,15 +4,17 @@ comment on other posts and stay up-to-date on the latest news! You can also sear
 See what all the BUZZ is about!
 
 -- 📸 SCREENSHOTS 📸 -- 
-<img width="1280" alt="Screenshot 2024-06-06 at 11 24 45 PM" src="https://github.com/Debiddo618/BuzzPage/assets/165956613/2831d286-fee3-481d-bf29-8a18ac55aaeb">
-<img width="1280" alt="Screenshot 2024-06-06 at 11 25 15 PM" src="https://github.com/Debiddo618/BuzzPage/assets/165956613/5b071dff-40d4-41ca-82e4-ac359dbe2672">
-<img width="1280" alt="Screenshot 2024-06-06 at 11 25 30 PM" src="https://github.com/Debiddo618/BuzzPage/assets/165956613/e39b2470-ad96-49d8-b212-8234e781679c">
-<img width="1280" alt="Screenshot 2024-06-06 at 11 25 01 PM" src="https://github.com/Debiddo618/BuzzPage/assets/165956613/6ffe0c9e-71f5-4c55-bda8-d96cdd68dc2a">
-<img width="1280" alt="Screenshot 2024-06-06 at 11 26 01 PM" src="https://github.com/Debiddo618/BuzzPage/assets/165956613/bc54f26b-a53e-447e-bf7b-ca94b8521dbd">
+![Landing](<Screenshot 2024-06-13 at 9.17.06 AM.png>)
+![Sign Up](<Screenshot 2024-06-13 at 9.17.26 AM.png>)
+![Sign In](<Screenshot 2024-06-13 at 9.18.25 AM.png>)
+![Home](<Screenshot 2024-06-13 at 9.18.46 AM.png>)
+![Comments](<Screenshot 2024-06-13 at 9.19.10 AM.png>)
+![Side Bar](<Screenshot 2024-06-13 at 9.19.37 AM.png>)
+![User Page](<Screenshot 2024-06-13 at 9.20.11 AM.png>)
 
 
 -- 🌟 LINK TO DEPLOYED SITE 🌟 -- 
-](https://buzzpage-cc6f7350ca02.herokuapp.com/)
+](https://buzzpagev2-a5e89272eb02.herokuapp.com/)
 
 -- 🌌 ASSETS 🌌 -- Image assets that I created in Canva for the site are included in the "assets' folder in this repository.
 
@@ -36,7 +38,7 @@ See what all the BUZZ is about!
 Project planning link: https://trello.com/invite/b/9mBCE5mu/ATTIa876f0ab15aa8fddde6385b57a697f2f7C6508FE/unit-3-project-buzzpage-by-beekeepers
 
 
-💻 TECHNOLOGIES USED: REACT, REACT Router, Express, Node, JavaScript, JWT Token Auth, BootStrap, Canva (graphic design app)
+💻 TECHNOLOGIES USED: REACT, REACT Router, Express, Node, JavaScript, JWT Token Auth, BootStrap, Canva (graphic design app), and Amazon S3
 
 NEXT STEPS:
 - Animation (honey drip or page transitions)
