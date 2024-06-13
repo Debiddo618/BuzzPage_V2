@@ -27,7 +27,7 @@ const Comment = (props) => {
                         value={formData.text}
                         onChange={handleChange}>
                     </input>
-                    <button style={{ backgroundColor: "#F4BE1E", border: "none" }} className="btn btn-outline-secondary text-light" type="submit" id="button-addon2">Button</button>
+                    <button style={{ backgroundColor: "#F4BE1E", border: "none" }} className="btn btn-outline-secondary text-light" type="submit" id="button-addon2">Submit</button>
                 </div>
 
             </form>
