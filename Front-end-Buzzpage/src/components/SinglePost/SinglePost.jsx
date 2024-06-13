@@ -77,6 +77,7 @@ const SinglePost = (props) => {
         setPost(updatedPost);
     };
 
+
     return (
         <div className={styles.container} style={{ minHeight: postId ? "100vh" : "" }}>
             {post &&
@@ -123,9 +124,29 @@ const SinglePost = (props) => {
                                 <p style={{ color: "#F4BE1E" }}>
                                     {post.title} by {post.author.username}
                                 </p>
-                            </Link>                        </h5>
-                        <p className="card-text" style={{ color: "#F4BE1E" }}
-                        >{post.text}</p>
+                            </Link>
+                        </h5>
+                        <p className={`card-text ${!postId ? styles.text : ""}`} style={{ color: "#F4BE1E", overflow: "hidden" }}
+                        >
+                            {post.text}
+                        </p>
+                        {!postId ?
+                            <p
+                                className={`card-text ${!postId ? styles.text : ""}`}
+                                style={{ color: "#F4BE1E", overflow: "hidden" }}
+                            >
+                                <Link
+                                    className={`${styles.link}`}
+                                    to={`/posts/${post._id}`}
+                                >
+                                    <h6 style={{ color: "#F4BE1E", textDecoration:"underline" }}>
+                                        Read More
+                                    </h6>
+                                </Link>
+                            </p>
+                            :
+                            ""
+                        }
 
                         {/* Collapse button and back to hive */}
                         <div className="d-inline-flex gap-1">

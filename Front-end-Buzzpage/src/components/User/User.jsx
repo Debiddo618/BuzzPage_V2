@@ -50,7 +50,7 @@ const User = (props) => {
                         <SideBar posts={user.posts} user={user} deleteMenu={deleteMenu} />
                     </div>
                     <div className="col-10">
-                        <div className="row w-100 mt-3 d-flex justify-content-between">
+                        <div className="row w-100 mt-1 d-flex justify-content-between">
                             <div className={`card bg-dark d-flex justify-content-center align-items-center`} style={{ width: "55%" }}>
                                 <img src={user.image} className="card-img-top h-75 w-75" alt="..." />
                                 <div className="card-body">
@@ -98,11 +98,11 @@ const User = (props) => {
                                     </>
                                 )}
                             </div>
-                            <h1 className={"m-3 text-light text-center"}>My Posts</h1>
+                            <h1 className={"m-1 text-light text-center"}>My Posts</h1>
 
                             <div className={`d-flex`}>
                                 {user.posts.length === 0 ? (
-                                    <div className="card h-100 bg-dark mt-3 w-75 mx-auto" >
+                                    <div className="card h-100 bg-dark w-75 mx-auto" >
                                         <div className="card-body justify-content-center d-flex flex-column">
                                             <h1 className="card-title justify-self-center text-center" style={{ color: "#F4BE1E" }}>NO POST</h1>
                                             <p className="card-text text-center" style={{ color: "#F4BE1E" }}>You need to get buzzing to the hive little bee</p>

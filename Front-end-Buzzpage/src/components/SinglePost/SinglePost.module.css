@@ -29,3 +29,31 @@
     align-items: center;
     gap: 5px;
 }
+
+.text {
+    overflow: hidden;
+    white-space: nowrap;
+    /* Prevents text wrapping */
+    text-overflow: ellipsis;
+    /* Adds ellipsis (...) to indicate overflow */
+    max-height: 3.6em;
+    /* Adjust to show only a specific number of lines */
+    line-height: 1.2em;
+    /* Adjust line height */
+    transition: max-height 0.3s ease;
+}
+
+.text.expanded {
+    max-height: none;
+    /* Allows full height */
+    white-space: normal;
+    /* Allows text wrapping */
+}
+
+.read-more {
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
